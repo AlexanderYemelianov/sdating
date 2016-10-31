@@ -1,0 +1,28 @@
+<!-- start-banner-->
+<div class="banner text-center" id="home">
+    <div class="container">
+        <div class="banner-info">
+            <h1><?=$data['mainpage'][0]['date_name']?></h1>
+            <p><?=$data['mainpage'][0]['description']?></p>
+            <a href="/registration/" class="banner_btn">For more information</a>
+        </div>
+    </div>
+</div>
+
+<!-- End-banner-->
+
+<div class="container">
+
+    <h3>Photo</h3>
+
+    <div class="photo_block_mainpage">
+        <?php foreach($data['photos'] as $photo) {?>
+            <div id="photo_archive">
+                <a href="/photos/photo_archive/<?=$photo['id']?>"><img src="/img/<?=$photo['imgDir']?>/<?=$photo['name']?>" title="<?=$photo['date_name']?>" alt="<?=$photo['id']?>" class="img-rounded"></a>
+            </div>
+        <?php } ?>
+    </div>
+</div>
+
+
+

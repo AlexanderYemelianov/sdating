@@ -1,0 +1,24 @@
+<h3>Edit page</h3><br>
+<form method="post" action="">
+    <input type="hidden" name="id" value="<?=$data['articles']['id']?>">
+    <div class="form-page">
+        <label for="alias">Alias</label>
+        <input type="text" id="alias" name="alias" value="<?=$data['articles']['alias']?>" class="form-control">
+    </div>
+    <div class="form-page">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="<?=$data['articles']['title']?>" class="form-control">
+    </div>
+    <div class="form-page">
+        <label for="content">Content</label>
+        <textarea name="content" id="content" class="form-control"><?=$data['articles']['content']?></textarea>
+    </div>
+    <div class="form-page">
+        <label for="is_published">Published</label>
+        <input type="checkbox" name="is_published" id="is_published" <?php if( $data['articles']['is_published'] ) {?>checked="checked" <?php } ?> />
+    </div>
+    <input type="submit" class="btn btn-success">
+</form>
+
+
+

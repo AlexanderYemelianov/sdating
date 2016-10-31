@@ -1,0 +1,21 @@
+<div class="container">
+
+    <h3>Send email to - <?=$data['participants'][0]['name']?> </h3><br>
+
+    <form method="post" action="emailings/admin_emailing">
+        <div class="form-page">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="<?=$data['participants'][0]['email']?>" class="form-control" required="">
+        </div>
+        <div class="form-page">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" required="">
+        </div>
+        <div class="form-page">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" class="form-control" required>Dear <?=$data['participants'][0]['name']?>, </textarea>
+        </div>
+        <input type="hidden" name="sendEmail" value="1">
+        <input type="submit" class="btn btn-success">
+    </form>
+</div>

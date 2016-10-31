@@ -1,0 +1,46 @@
+<div class="container">
+    <h3>Registration</h3>
+
+    <div class="row">
+        <!--Form of registration-->
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <form action="" method="post">
+                <input type="text" class="form-control" name="name" placeholder="Your name"><br>
+                <input type="text" class="form-control" name="last_name" placeholder="Your last name" required><br>
+                <select size="1" class="form-control" name="sex" required>
+                    <option value="0">Choose your sex</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select><br>
+                <select size="1" class="form-control" name="age_group" required>
+                    <option value="0">Choose your age group</option>
+                    <option value="18-25">18-25</option>
+                    <option value="25-35">25-35</option>
+                    <option value="35-45">35-45</option>
+                    <option value="45+">45+</option>
+                </select><br>
+                <input type="email" class="form-control" name="email" placeholder="Your email" required><br>
+                <input type="text" class="form-control" name="phone" placeholder="Your telephone number" required><br>
+                <input type="hidden" class="form-control" name="id_of_date" value="<?=$data['mainpage'][0]['id']?>">
+                <button class="btn btn-primary btn-block" name="enter" value="enter" type="submit">Registration</button>
+                <button class="btn btn-default btn-block" type="clear">Reset</button>
+            </form>
+        </div>
+
+        <!--About date-->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h3 class="text-right"><?=$data['mainpage'][0]['date_name']?></h3>
+            <p class="text-right">Date will start: <?=$data['mainpage'][0]['date']?></p>
+            <p class="text-right">For more information about location of date check link below.</p>
+            <p class="text-right"><a href="<?=$data['mainpage'][0]['link']?>" target="_blank">Link</a></p>
+        </div>
+
+        <br>
+        <!--Map-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top: 25px;">
+            <iframe src="<?=$data['mainpage'][0]['location']?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+

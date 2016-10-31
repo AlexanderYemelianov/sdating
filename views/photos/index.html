@@ -1,0 +1,15 @@
+<div class="container">
+
+    <h3>Photo</h3>
+
+    <div class="photo_block">
+        <?php foreach($data['photos'] as $photo) {?>
+        <div id="photo_archive">
+            <a href="/photos/photo_archive/<?=$photo['id']?>"><img src="/img/<?=$photo['imgDir']?>/<?=$photo['name']?>" alt="<?=$photo['id']?>" class="img-rounded" title="<?=$photo['date_name']?>"></a>
+            <h4 align="center"><?=$photo['date_name']?></h4>
+        </div>
+        <?php } ?>
+    </div>
+
+</div>
+

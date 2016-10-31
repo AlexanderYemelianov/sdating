@@ -1,0 +1,11 @@
+<div class="container">
+    <h3>Admin Photo</h3>
+    <div class="photo_block">
+        <?php foreach($data['photos'] as $photo) {?>
+            <div id="photo_archive">
+                <img src="/img/<?=$photo['imgDir']?>/<?=$photo['name']?>" alt="<?=$photo['id']?>">
+                <a href="/admin/photos/delete/<?=$photo['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning btn-block">Delete</button></a>
+            </div>
+        <?php } ?>
+    </div>
+</div>

@@ -1,0 +1,140 @@
+body{
+    padding-top: 25px;
+}
+
+.starter-template{
+    padding: 15px 15px;
+}
+
+/*form{
+     width: 400px;
+     max-width: 400px;
+}*/
+
+textarea{
+    min-height: 150px;
+}
+
+#tableWithSympathyStatus{
+    width: 300px;
+}
+#tableWithSympathyStatus td{
+    vertical-align: middle;
+}
+
+#buttonFromTableWithSympathyStatus{
+    width: 300px;
+}
+
+.alert.alert-info{
+    width: 100%;
+    padding-top: 45px;
+    margin-bottom: 0px;
+}
+
+/*--Div style in photo_archive*/
+
+.photo_block{
+    display: inline-flex;
+}
+
+.photo_block_mainpage{
+    display: flex;
+    justify-content: space-around;
+}
+
+.photo_block_mainpage img{
+    width: 250px;
+    height: 200px;
+}
+
+.photo_block img{
+    width: 250px;
+    height: 200px;
+}
+
+#photo_archive{
+    width:250px;
+    height:200px;
+    margin: 0px 10px 10px 0px;
+}
+
+/*--banner--*/
+.banner {
+    background: url(../img/banner.jpg)no-repeat center top;
+    background-size: 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+.banner-info {
+    padding:10em 0 13em;
+}
+a.banner-btn span {
+    width: 80px;
+    height:79px;
+    display: inline-block;
+    background: url(../img/banner_icon.png) no-repeat 0px 0px;
+}
+.banner-info h1 {
+    font-size:3.5em;
+    color: #FB326F;
+    font-weight: bold;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    border-top: 1px solid #dfa69b;
+    border-bottom: 1px solid #dfa69b;
+    width:38%;
+    margin:20px auto;
+}
+.banner-info p{
+    color: #FB326F;
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.5em;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 20px;
+}
+.banner_btn {
+    display: inline-block;
+    background: url(../img/arrow.png) no-repeat 158px 14px #fb326f;
+    padding: 17px 30px 17px 12px;
+    color: #FFF;
+    font-size: 30px;
+    line-height: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.banner_btn:hover {
+    background: url(../img/arrow.png) no-repeat 158px 14px #E71F5C;
+    color:#fff;
+    text-decoration:none;
+}
+
+/*Navigation*/
+
+#navbar a.active{
+    color:  #FB326F;
+}
+
+/*Table*/
+
+.table.table-striped table{
+    width: 100%;
+    max-width: 700px;
+}
+
+.icon-bar{
+    color:  #FB326F;
+}

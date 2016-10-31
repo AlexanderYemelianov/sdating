@@ -1,0 +1,22 @@
+<div class="container">
+    <h3>Articles</h3>
+
+    <table class="table table-striped">
+        <?php foreach($data['articles'] as $article) { ?>
+        <tr>
+            <td><b><?=$article['title']?></b></td>
+            <td align="right">
+                <a href="/admin/articles/edit/<?=$article['id']?>"><button class="btn btn-sm btn-primary">Edit</button></a>
+                <a href="/admin/articles/delete/<?=$article['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning">Delete</button></a>
+            </td>
+        </tr>
+        <?php } ?>
+    </table>
+
+    <br>
+
+    <div>
+        <a href="/admin/articles/add"><button class="btn btn-sm btn-success">New Article</button></a>
+    </div>
+</div>
+

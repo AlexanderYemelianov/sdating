@@ -1,0 +1,32 @@
+<h3>Edit page</h3><br>
+<form method="post" action="">
+    <input type="hidden" name="id" value="<?=$data['dates'][0]['id']?>">
+    <div class="form-page">
+        <label for="date_name">Date name</label>
+        <input type="text" id="date_name" name="date_name" value="<?=$data['dates'][0]['date_name']?>" class="form-control">
+    </div>
+    <div class="form-page">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" class="form-control"><?=$data['dates'][0]['description']?></textarea>
+    </div>
+    <div class="form-page">
+        <label for="date">Date</label>
+        <input type="text" id="date" name="date" value="<?=$data['dates'][0]['date']?>" class="form-control">
+    </div>
+    <div class="form-page">
+        <label for="link">Link</label>
+        <a href="<?=$data['dates'][0]['link']?>" target="_blank"><?=$data['dates'][0]['link']?></a>
+        <input type="text" id="link" name="link" value="<?=$data['dates'][0]['link']?>" class="form-control">
+    </div>
+    <div class="form-page">
+        <label for="location">Location</label>
+        <a href="<?=$data['dates'][0]['location']?>" target="_blank">Link on the map</a>
+        <textarea name="location" id="location" class="form-control"><?=$data['dates'][0]['location']?></textarea>
+    </div>
+    <input type="submit" class="btn btn-success">
+</form>
+
+
+
+
+

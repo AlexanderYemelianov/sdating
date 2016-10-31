@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><?=Config::get('site_name')?></title>
+    <script src="/js/admin.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Open navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" id="brand"><?=Config::get('site_name')?></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a <?php if(App::getRouter()->getController() == 'rules') {?>class="active"; <?php } ?> href="/rules/">Rules</a></li>
+                    <li><a <?php if(App::getRouter()->getController() == 'registration') {?>class="active" <?php } ?> href="/registration/">Registration</a></li>
+                    <li><a <?php if(App::getRouter()->getController() == 'photos') {?>class="active" <?php } ?> href="/photos/">Photo</a></li>
+                    <li><a <?php if(App::getRouter()->getController() == 'articles') {?>class="active" <?php } ?> href="/articles/">Articles</a></li>
+                    <li><a <?php if(App::getRouter()->getController() == 'contacts') {?>class='active'<?php } ?> href="/contacts/">Contact Us</a></li>
+                    <li><a <?php if(App::getRouter()->getController() == 'users') {?>class='active'<?php } ?> href="/admin/users/login/">Login</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <!--Flash messages-->
+
+    <?php if(Session::hasFlash()){?>
+        <div class="alert alert-info" role="alert">
+            <?php Session::flash();?>
+        </div>
+    <?php } ?>
+
+    <div>
+
+        <div class="starter-template">
+
+            <!--Content in container-->
+            <?=$data['content']?>
+
+        </div>
+    </div>
+
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted" align="right">&copy; 2016 AvKube, Inc.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript-->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
+</html>

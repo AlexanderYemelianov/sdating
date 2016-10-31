@@ -1,0 +1,31 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-9 col-md- col-sm-9 col-xs-12">
+            <?php foreach ($data['articles'] as $pages_data){ ?>
+            <div>
+                <h3><?=$pages_data['title']?></h3>
+                <p class='text-right'><em><?=$pages_data['date']?></em></p>
+                <p align='justify'><?=mb_substr($pages_data['content'],0,200).' ...'?></p>
+                <form action="/articles/view/<?=$pages_data['alias']?>">
+                    <input type='submit' value='Читать полностью' class='btn btn-primary btn-sm'>
+                </form>
+            </div>
+            <?php } ?>
+        </div>
+
+        <div class="col-xs-3 col-md-3 col-sm-3 col-xs-0" align='justify'>
+            <div style="margin-top:10px;">
+                <h3>Archive:</h3>
+            </div>
+            <?php foreach ($data['articles'] as $pages_data){ ?>
+            <div style="margin-top:5px;">
+                <p><em><?=$pages_data['date']?></em></p>
+                <a href="/articles/view/<?=$pages_data['alias']?>"><?=$pages_data['title']?></a>
+                <hr>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+

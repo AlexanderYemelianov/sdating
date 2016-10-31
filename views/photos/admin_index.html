@@ -1,0 +1,36 @@
+<div class="container">
+
+    <h3>Add new photo</h3>
+
+    <form enctype="multipart/form-data" action="" method="POST">
+        <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
+        <input type="hidden" name="MAX_FILE_SIZE" value="1500000" />
+        <!-- Название элемента input определяет имя в массиве $_FILES -->
+        <input type="text" class="form-control" name="archiveName" placeholder="Name of archive"><br>
+        <select class="form-control" name="dateId">
+            <?php foreach($data['dateId'] as $id){ ?>
+            <option><?=$id['id']?> - <?=$id['date_name']?></option>
+            <?php } ?>
+        </select>
+        <br>
+        <input type="file" min="1" max="30" name="picture[]" multiple="true" title="Choose image for upload" class="btn btn-default btn-block">
+        <button class="btn btn-primary btn-block" name="sendImg" value="sendImg" type="submit" title="You can upload from 1 to 30 images. Allowed file type are: .jpg, .gif, .bmp, .png.">Send Image</button>
+    </form>
+
+    <br>
+
+    <h3>Photo archives</h3>
+
+    <div class="photo_block">
+        <?php foreach($data['photos'] as $photo) {?>
+            <div id="photo_archive">
+                <a href="/admin/photos/photo_archive/<?=$photo['id']?>"><img src="/img/<?=$photo['imgDir']?>/<?=$photo['name']?>" alt="<?=$photo['id']?>" class="img-rounded" title="<?=$photo['date_name']?>"></a>
+                <h4 align="center"><?=$photo['date_name']?></h4>
+            </div>
+        <?php } ?>
+    </div>
+
+</div>
+
+
+

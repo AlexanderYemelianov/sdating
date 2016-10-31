@@ -1,0 +1,40 @@
+<div class="container">
+    <h3>Send email with results to - <?=$data['participant'][0]['name']?> <?=$data['participant'][0]['last_name']?></h3><br>
+
+    <div class="form-page">
+        <h4>List of participants</h4>
+        <form action="" method="post">
+            <table id="tableWithSympathyStatus" class="table table-hover">
+                <?php foreach($data['participants'] as $participants) { ?>
+                <tr>
+                    <td><label for="<?=$participants['id']?>"><?=$participants['name']?> <?=$participants['last_name']?></label></td>
+                    <td><input class="form-control" type="checkbox" id="<?=$participants['id']?>" name="sympathy[]" value="<?=$participants['id']?>"></td>
+                </tr>
+                <?php } ?>
+            </table>
+            <input id="buttonFromTableWithSympathyStatus" type="submit" class="btn btn-primary" value="Prepare reply">
+        </form>
+    </div>
+    <br>
+    <form method="post" action="">
+        <div class="form-page">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="<?=$data['participant'][0]['email']?>" class="form-control" required="">
+        </div>
+        <div class="form-page">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" required="">
+        </div>
+
+        <div class="form-page">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" class="form-control" required>Dear <?=$data['participant'][0]['name'] . ",\r\n\r\n"?>After our date you have sympathy with:
+                <?php foreach($data['message'] as $result) {
+                    echo "\r\n" . $result['name'] . " " . $result['last_name'] . ", tel: " . $result['phone'] . ", email: " . $result['email'];
+                }?>
+            </textarea>
+        </div>
+
+        <input type="submit" class="btn btn-success" name="send" value="Send results">
+    </form>
+</div>

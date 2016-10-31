@@ -1,0 +1,27 @@
+<h3>Archive of Dates</h3><br>
+<table class="table table-striped" style="width: 100%">
+    <tr>
+        <td style="width: 5%">#</td>
+        <td style="width: 15%">Date Name</td>
+        <td style="width: 45%">Description</td>
+        <td style="width: 10%">Date</td>
+        <td style="width: 15%">Link</td>
+        <td style="width: 10%">Location</td>
+    </tr>
+    <?php $a = 1;?>
+    <?php foreach($data['archive'] as $item) {?>
+    <tr>
+        <td><?=$a; $a++?></td>
+        <td><?=$item['date_name']?></td>
+        <td><?=$item['description']?></td>
+        <td><?=$item['date']?></td>
+        <td><a href="<?=$item['link']?>" target="_blank"><?=$item['link']?></a></td>
+        <td><a href="<?=$item['location']?>" target="_blank">Map link</a></td>
+    </tr>
+    <?php } ?>
+</table>
+
+
+
+
+

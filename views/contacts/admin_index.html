@@ -1,0 +1,18 @@
+<h3>Messages</h3>
+<table class="table table-striped" style="width: 100%">
+    <tr>
+        <td style="width: 20%">Name</td>
+        <td style="width: 20%">Email</td>
+        <td style="width: 50%">Message</td>
+        <td style="width: 10%">Reply status</td>
+    </tr>
+    <?php foreach($data as $item) {?>
+    <tr>
+        <td><?=$item['name']?></td>
+        <td><?=$item['email']?></td>
+        <td><?=$item['message']?></td>
+        <td><?php if(isset($item['replyStatus'])){ ?> <input class="form-control" type="checkbox" checked> <?}else{?>
+            <a class="btn btn-primary" href="/admin/emailings/reply_page/<?=$item['id']?>" role="button">Reply</a> <?}?></td>
+    </tr>
+    <?php } ?>
+</table>

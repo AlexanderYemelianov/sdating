@@ -1,0 +1,46 @@
+<div class="container">
+
+    <h3>List of participants for date - <b>
+        <?php if(isset($data['participants']['fullList'])){
+            echo 'List of all participants';
+        }else{
+            echo $data['participants'][0]['date_name'];
+        }?>
+    </b></h3>
+
+    <form action="" method="POST">
+        <select class="form-control" name="datesId">
+            <option value="all">Select all participants</option>
+            <?php foreach($data['dateId'] as $id){ ?>
+            <option value="<?=$id['id']?>"><?=$id['date_name']?></option>
+            <?php } ?>
+        </select>
+        <br>
+        <button class="btn btn-primary btn-block" name="postDatesId" value="postDatesId" type="submit">Get participants</button>
+    </form>
+    <br>
+
+    <table class="table table-striped">
+        <tr>
+            <td>Name</td>
+            <td>Last name</td>
+            <td>Sex</td>
+            <td>Age group</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Dates name</td>
+        </tr>
+        <?php foreach($data['participants'] as $participantsData) {?>
+        <tr>
+            <td><?=$participantsData['name']?></td>
+            <td><?=$participantsData['last_name']?></td>
+            <td><?=$participantsData['sex']?></td>
+            <td><?=$participantsData['age_group']?></td>
+            <td><?=$participantsData['email']?></td>
+            <td><?=$participantsData['phone']?></td>
+            <td><?=$participantsData['date_name']?></td>
+            <?php } ?>
+        </tr>
+    </table>
+
+</div>

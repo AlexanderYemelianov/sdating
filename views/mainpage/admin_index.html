@@ -1,0 +1,60 @@
+<h2 align="center">Main</h2>
+
+<!--About date-->
+<div align="center">
+    <a href="/admin/mainpage/add"><button class="btn btn-sm btn-success">New Date</button></a>
+    <a href="/admin/mainpage/edit/<?=$data['mainpage'][0]['id']?>"><button class="btn btn-sm btn-primary">Edit current date</button></a>
+    <a href="/admin/mainpage/delete/<?=$data['mainpage'][0]['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning">Delete current date</button></a>
+    <a href="/admin/mainpage/archive"><button class="btn btn-sm btn-default">Archive</button></a>
+</div>
+<div>
+    <h2 align="center">Current date</h2>
+</div>
+
+
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <p>Name: <?=$data['mainpage'][0]['date_name']?></p>
+    <p>Date: <?=$data['mainpage'][0]['date']?></p>
+    <p>Web-site of location: <a href="<?=$data['mainpage'][0]['link']?>" target="_blank"><?=$data['mainpage'][0]['link']?></a></p>
+    <p>Already registered: </p>
+</div>
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <iframe src="<?=$data['mainpage'][0]['location']?>" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+<!--Particiapnts for this date-->
+<br>
+
+<div>
+    <table class="table table-striped">
+        <tr>
+            <td width="20%">Name</td>
+            <td width="7%">Sex</td>
+            <td width="8%">Age group</td>
+            <td width="20%">Email</td>
+            <td width="15%">Phone</td>
+            <td width="7%">Informed</td>
+            <td width="7%">Prepayment</td>
+            <td width="8%">Results</td>
+            <td width="8%">Emailing</td>
+        </tr>
+        <?php foreach($data['participants'] as $participantsData) {?>
+        <tr>
+            <td><?=$participantsData['name']?> <?=$participantsData['last_name']?></td>
+            <td><?=$participantsData['sex']?></td>
+            <td><?=$participantsData['age_group']?></td>
+            <td><?=$participantsData['email']?></td>
+            <td><?=$participantsData['phone']?></td>
+            <td><?php if(isset($participantsData['informed'])){ ?> <input class="form-control" type="checkbox" checked> <?}else{?> <form action="emailings/inform/" method="post"><button class="btn btn-sm btn-primary" name="informed_status_with_user_id" value="<?=$participantsData['id']?>" type="submit">Inform</button></form> <?}?></td>
+            <td><?php if(isset($participantsData['pre_payment_status'])){ ?> <input class="form-control" type="checkbox" checked> <?}else{?> <form action="mainpage/prepayment/" method="post"><button class="btn btn-sm btn-primary" name="prepayment_status_with_user_id" value="<?=$participantsData['id']?>" type="submit">OK</button></form> <?}?></td>
+            <td>
+                <?php if(isset($participantsData['dates_results'])){ ?>
+                    <input class="form-control" type="checkbox" checked>
+                <?}else{?>
+                    <a href="emailings/results/<?=$participantsData['id']?>"><button class="btn btn-sm btn-primary">Results</button></a>
+                <?}?>
+            </td>
+            <td> <a href="emailings/emailing_page/<?=$participantsData['id']?>"><button class="btn btn-sm btn-success">Email</button></a></td>
+            <?php } ?>
+        </tr>
+    </table>
+</div>
